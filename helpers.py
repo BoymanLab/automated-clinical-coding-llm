@@ -10,7 +10,7 @@ client = OpenAI()
 
 def construct_translation_prompt(medical_note):
     """
-    Construct a prompt template for translating spanish medical notes to english.
+    Construct a prompt template for translating German medical notes to English.
     
     Args:
         medical_note (str): The medical case note.
@@ -18,16 +18,16 @@ def construct_translation_prompt(medical_note):
     Returns:
         str: A structured template ready to be used as input for a language model.
     """    
-    translation_prompt = """You are an expert Spanish-to-English translator. You are provided with a clinical note written in Spanish.
-You must translate the note into English. You must ensure that you properly translate the medical and technical terms from Spanish to English without any mistakes.
-Spanish Medical Note:
+    translation_prompt = """You are an expert German-to-English translator. You are provided with a clinical note written in German.
+You must translate the note into English. You must ensure you properly translate the medical and technical terms from German to English without any mistakes.
+German Medical Note:
 {medical_note}"""
     
     return translation_prompt.format(medical_note = medical_note)
 
 def build_translation_prompt(input_note, system_prompt=""):
     """
-    Build a zero-shot prompt for translating spanish medical notes to english.
+    Build a zero-shot prompt for translating German medical notes to English.
     
     Args:
         input_note (str): The input note or query.
